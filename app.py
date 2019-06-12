@@ -35,7 +35,7 @@ class Game(db.Model):
     last_published = db.Column(db.DateTime)
     last_price = db.Column(db.Float(2))
     images = db.relationship('Image', backref='game', lazy='dynamic')
-    files = db.relationship('File',backref='game',lazy='dynamic')
+    files = db.relationship('File', backref='game', lazy='dynamic')
 
 
 class File(db.Model):
@@ -47,7 +47,7 @@ class File(db.Model):
     size = db.Column(db.Integer)
     md5sum = db.Column(db.String(32))
     note = db.Column(db.String(255))
-    verified = db.Column(db.Boolean)
+    verified = db.Column(db.Boolean)   # is file verified from eshop? (size/hash)
 
 
 class Image(db.Model):
@@ -68,7 +68,6 @@ class Genre(db.Model):
 class StoreTag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
-
 
 
 admin.add_view(ModelView(Game, db.session))
