@@ -6,7 +6,7 @@ from flask_admin.contrib.sqla import ModelView
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-app.config['SECRET_KEY'] = 'mysecret'
+app.config['SECRET_KEY'] = 'testsecret'
 
 db = SQLAlchemy(app)
 
@@ -34,15 +34,20 @@ class Game(db.Model):
     first_published = db.Column(db.DateTime)
     last_published = db.Column(db.DateTime)
     last_price = db.Column(db.Float(2))
+    images = db.relationship('Image', backref='game', lazy='dynamic')
+    files = db.relationship('File',backref='game',lazy='dynamic')
 
 
 class File(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    game_id = db.Column(db.Integer, db.ForeignKey('game.id'))
     filename = db.Column(db.String(255))
     cached_url = db.Column(db.Text)
     origin_url = db.Column(db.Text)
     size = db.Column(db.Integer)
     md5sum = db.Column(db.String(32))
+    note = db.Column(db.String(255))
+    verified = db.Column(db.Boolean)
 
 
 class Image(db.Model):
@@ -52,6 +57,7 @@ class Image(db.Model):
     cached_url = db.Column(db.Text)
     origin_url = db.Column(db.Text)
     size = db.Column(db.Integer)
+    game_id = db.Column(db.Integer, db.ForeignKey('game.id'))
 
 
 class Genre(db.Model):
@@ -62,6 +68,7 @@ class Genre(db.Model):
 class StoreTag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
+
 
 
 admin.add_view(ModelView(Game, db.session))
