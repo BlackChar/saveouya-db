@@ -1,0 +1,1 @@
+game files (and additional data) go here. sorted in folders by game class (eg. com.squareenix.ff3android)

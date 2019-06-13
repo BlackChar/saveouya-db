@@ -1,0 +1,1 @@
+media files (screenshots, videos) go here. Split into folders by game namespace (eg com.squareenix.ff3android)
