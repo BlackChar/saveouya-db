@@ -1,0 +1,44 @@
+{
+  "app": {
+    "uuid": "51cedeec-c76f-4020-9ba3-68fa7b369d69",
+    "title": "Brutal Arena",
+    "supportEmailAddress": "gman@iinet.net.au",
+    "supportPhone": null,
+    "website": "http://brutalarena.com/",
+    "founder": true,
+    "versionNumber": "1.3.7",
+    "likeCount": 121,
+    "overview": "Released in August 2014 by Gareth Lockett.",
+    "contentRating": "12+",
+    "publicSize": 412176,
+    "nativeSize": 269296,
+    "ratingAverage": 3.07,
+    "ratingCount": 215,
+    "gamerNumbers": [
+      1
+    ],
+    "developer": "Gareth Lockett",
+    "description": "Brutal Arena is a fun, lowest-common-denominator, local multiplayer action arena. Simply have your character grab a weapon as fast as possible and blow the other players away!\r\n\r\nCurrently supports up to 4 human players, 9 playable characters, 4 game types, 8 levels, 6 weapons, and built in controller mapper.\r\n\r\nMore characters and levels to come!",
+    "premium": false,
+    "md5sum": "4a7f6bd5df9695507e87b8ac6417c3a6",
+    "apkFileSize": 35501890,
+    "filepickerScreenshots": [
+      "https://d3e4aumcqn8cw3.cloudfront.net/api/file/oyGyOWOtQnmaE0Z5aWD4",
+      "https://d3e4aumcqn8cw3.cloudfront.net/api/file/6A2DNGTGSeuptpu23WQZ",
+      "https://d3e4aumcqn8cw3.cloudfront.net/api/file/AB9qe68AT7GDA7b474Ma",
+      "https://d3e4aumcqn8cw3.cloudfront.net/api/file/QXxktdTLWdofetohNF0A",
+      "https://d3e4aumcqn8cw3.cloudfront.net/api/file/rcgqeYiySmCkgr4miBdJ"
+    ],
+    "mainImageFullUrl": "https://d3e4aumcqn8cw3.cloudfront.net/api/file/OBCuKICRuqcDvTi3puEA",
+    "genres": [
+      "Fight!",
+      "Multiplayer"
+    ],
+    "latestVersion": "51cedeec-c76f-4020-9ba3-68fa7b369d69",
+    "firstPublishedAt": "2013-10-03T03:35:26Z",
+    "publishedAt": "2014-08-16T00:36:31Z",
+    "videoUrl": "https://vimeo.com/102710916",
+    "mobileAppIcon": null,
+    "promotedProduct": null
+  }
+}

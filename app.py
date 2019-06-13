@@ -41,13 +41,14 @@ class Game(db.Model):
 class File(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     game_id = db.Column(db.Integer, db.ForeignKey('game.id'))
+    rel_path = db.Column(db.String(255))  # path relative to `files` subdir - basically path in final release
     filename = db.Column(db.String(255))
-    cached_url = db.Column(db.Text)
-    origin_url = db.Column(db.Text)
+    cached_url = db.Column(db.Text)  # if we have file in some external repo (eg public MEGA) you can store its link here
+    origin_url = db.Column(db.Text)  # Original CDN link the file was downloaded from
     size = db.Column(db.Integer)
     md5sum = db.Column(db.String(32))
     note = db.Column(db.String(255))
-    verified = db.Column(db.Boolean)   # is file verified from eshop? (size/hash)
+    verified = db.Column(db.Boolean)  # is file verified from eshop? (size/hash)
 
 
 class Image(db.Model):
@@ -70,11 +71,8 @@ class StoreTag(db.Model):
     name = db.Column(db.String(255))
 
 
-admin.add_view(ModelView(Game, db.session))
-admin.add_view(ModelView(File, db.session))
-admin.add_view(ModelView(Image, db.session))
-admin.add_view(ModelView(Genre, db.session))
-admin.add_view(ModelView(StoreTag, db.session))
+for table in (Game, File, Image, Genre, StoreTag):
+    admin.add_view(ModelView(table, db.session))
 
 if __name__ == '__main__':
     app.run(debug=True)
