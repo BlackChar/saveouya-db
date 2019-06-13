@@ -1,5 +1,11 @@
 # saveouya-db
 Database lister for final snapshot of Ouya eshop
+It has working database model (for now) and rudimentary admin interface. 
+to run:
+ - create python venv
+ - run `pip install < requirements.txt` from inside venv
+ - python app.py
+ - open http://localhost:5000/admin to access webadmin
 
 TODO:
 
